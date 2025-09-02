@@ -16,6 +16,7 @@ import { ProductionStatusModule } from './production-status/production-status.mo
 import { OrderStatusModule } from './order-status/order-status.module';
 import { DeliveryStatusModule } from './delivery-status/delivery-status.module';
 import { ProductCategoryModule } from './product-category/product-category.module';
+import { ProductModule } from './product/product.module';
 
 @Module({
   imports: [
@@ -49,6 +50,9 @@ import { ProductCategoryModule } from './product-category/product-category.modul
     
     // Import ProductCategoryModule để quản lý nhóm sản phẩm
     ProductCategoryModule,
+    
+    // Import ProductModule để quản lý sản phẩm
+    ProductModule,
   ],
   controllers: [], // Không có controllers ở level app, chỉ có ở modules con
   providers: [],   // Không có providers chung ở level app

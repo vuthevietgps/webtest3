@@ -1,0 +1,12 @@
+{
+  "name": "Test Product Fixed",
+  "categoryId": "674a8b725077ec5d28a0d499",
+  "importPrice": 100000,
+  "shippingCost": 10000,
+  "packagingCost": 5000,
+  "minStock": 5,
+  "maxStock": 50,
+  "estimatedDeliveryDays": 3,
+  "status": "Hoạt động",
+  "notes": "Test product after removing retailPrice and quantity"
+}

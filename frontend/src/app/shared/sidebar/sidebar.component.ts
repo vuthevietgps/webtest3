@@ -60,6 +60,11 @@ export class SidebarComponent {
       route: '/product-category'
     },
     {
+      icon: '🛍️',
+      label: 'Quản Lý Sản Phẩm',
+      route: '/product'
+    },
+    {
       icon: '📊',
       label: 'Lợi Nhuận',
       route: '/profit'
