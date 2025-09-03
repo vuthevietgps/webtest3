@@ -22,8 +22,9 @@
   </div>
 
   <div class="content">
-    <div *ngIf="loading" class="loading">
-      Đang tải...
+    <div *ngIf="loading" class="loading-skeleton">
+      <div class="skeleton-header"></div>
+      <div class="skeleton-row" *ngFor="let item of [1,2,3,4,5]"></div>
     </div>
 
     <div *ngIf="error" class="error">

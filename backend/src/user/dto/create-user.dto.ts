@@ -35,10 +35,11 @@ export class CreateUserDto {
 
   /**
    * Số điện thoại của user
-   * Required field
+   * Optional field - không bắt buộc
    */
+  @IsOptional()
   @IsString()
-  phone: string;
+  phone?: string;
 
   /**
    * Role/vai trò của user trong hệ thống

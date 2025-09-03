@@ -24,8 +24,13 @@ export class UserListComponent implements OnInit {
   
   userRoles = Object.values(UserRole);
 
-  ngOnInit(): void {
+  constructor() {
+    // Load data ngay khi component được tạo để sẵn sàng hiển thị
     this.loadUsers();
+  }
+
+  ngOnInit(): void {
+    // Data đã được load trong constructor
   }
 
   loadUsers(): void {
@@ -38,7 +43,7 @@ export class UserListComponent implements OnInit {
         this.loading = false;
       },
       error: (error) => {
-        this.error = 'Failed to load users';
+        this.error = 'Không thể tải danh sách người dùng';
         this.loading = false;
         console.error('Error loading users:', error);
       }
@@ -50,13 +55,13 @@ export class UserListComponent implements OnInit {
   }
 
   deleteUser(id: string): void {
-    if (confirm('Are you sure you want to delete this user?')) {
+    if (confirm('Bạn có chắc chắn muốn xóa người dùng này?')) {
       this.userService.deleteUser(id).subscribe({
         next: () => {
           this.loadUsers();
         },
         error: (error) => {
-          this.error = 'Failed to delete user';
+          this.error = 'Không thể xóa người dùng';
           console.error('Error deleting user:', error);
         }
       });

@@ -5,18 +5,21 @@
   
   <ul class="menu-list">
     <li *ngFor="let item of menuItems" class="menu-item">
-      <div class="menu-link" 
-           [class.has-children]="item.children?.length"
-           (click)="item.children?.length ? toggleExpanded(item.route) : null">
-        <a *ngIf="!item.children?.length" 
-           [routerLink]="item.route" 
+      <!-- Items without children - direct navigation -->
+      <div *ngIf="!item.children?.length" class="menu-link">
+        <a [routerLink]="item.route" 
            routerLinkActive="active"
            class="link-content">
           <span class="icon">{{ item.icon }}</span>
           <span class="label">{{ item.label }}</span>
         </a>
-        
-        <div *ngIf="item.children?.length" class="link-content expandable">
+      </div>
+      
+      <!-- Items with children - toggle behavior -->
+      <div *ngIf="item.children?.length" 
+           class="menu-link has-children"
+           (click)="toggleExpanded(item.route)">
+        <div class="link-content expandable">
           <span class="icon">{{ item.icon }}</span>
           <span class="label">{{ item.label }}</span>
           <span class="expand-icon" [class.expanded]="isExpanded(item.route)">

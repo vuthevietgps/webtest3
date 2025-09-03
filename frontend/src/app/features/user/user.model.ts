@@ -31,7 +31,7 @@ export interface User {
   fullName: string;      // Họ và tên đầy đủ
   email: string;         // Email (unique)
   password?: string;     // Mật khẩu (optional khi get data)
-  phone: string;         // Số điện thoại
+  phone?: string;        // Số điện thoại (optional)
   role: UserRole;        // Vai trò trong hệ thống
   address?: string;      // Địa chỉ (optional)
   isActive?: boolean;    // Trạng thái hoạt động (default: true)
@@ -50,7 +50,7 @@ export interface CreateUserDto {
   fullName: string;      // Required
   email: string;         // Required
   password: string;      // Required khi tạo mới
-  phone: string;         // Required
+  phone?: string;        // Optional
   role: UserRole;        // Required
   address?: string;      // Optional
   isActive?: boolean;    // Optional - default true
